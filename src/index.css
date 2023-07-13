@@ -3,6 +3,7 @@
   --color-main-text: #A0C49D;
   --color-main-background: #F7FFE5;
   --color-links-text: #E1ECC8;
+  --color-red: #d75d5d;
 
   --header-height: 70px;
 }
@@ -21,6 +22,51 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-main-background);
 }
+
+.content {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1200px;
+  min-height: calc(100vh - var(--header-height));
+  padding: 16px;
+  display: flex;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--color-links-text);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
 
 a {
   text-decoration: none;

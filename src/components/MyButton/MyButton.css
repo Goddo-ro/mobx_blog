@@ -1,0 +1,16 @@
+button {
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: var(--color-links-text);
+    color: var(--color-gray);
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+button:hover,
+button:focus {
+    box-shadow: none;
+}

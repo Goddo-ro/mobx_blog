@@ -2,8 +2,9 @@ import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import AccessControl from "../store/AccessControl";
 import {privateRoutes, routes} from "../router/router";
+import {observer} from "mobx-react-lite";
 
-const AppRouter = () => {
+const AppRouter = observer(() => {
     return (
         <Routes>
             {
@@ -17,6 +18,6 @@ const AppRouter = () => {
             }
         </Routes>
     );
-};
+});
 
 export default AppRouter;

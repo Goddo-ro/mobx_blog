@@ -2,8 +2,9 @@ import React from 'react';
 import "./Header.css";
 import AccessControl from "../../store/AccessControl";
 import {Link} from "react-router-dom";
+import {observer} from "mobx-react-lite";
 
-const Header = () => {
+const Header = observer(() => {
     return (
         <header>
             <h1>React + MobX Blog App</h1>
@@ -11,7 +12,7 @@ const Header = () => {
                 AccessControl.isAuthenticated
                 ? <div>
                     <p>{AccessControl.username}</p>
-                    <a>Exit</a>
+                    <a className="exit-btn" onClick={() => AccessControl.exit()}>Exit</a>
                   </div>
                 : <div>
                     <Link to="/login">Login</Link>
@@ -19,6 +20,6 @@ const Header = () => {
             }
         </header>
     );
-};
+});
 
 export default Header;

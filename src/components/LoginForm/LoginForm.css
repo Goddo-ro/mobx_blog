@@ -1,0 +1,23 @@
+.single-form {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--color-main-text);
+    color: var(--color-main-background);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+}
+
+.password-checkbox-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-checkbox-container > input {
+    margin-right: 8px;
+}
