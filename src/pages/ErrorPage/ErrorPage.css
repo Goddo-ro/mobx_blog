@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    gap: 12px;
+    height: calc(100vh - var(--header-height));
     width: 100vw;
     overflow: hidden;
 }
