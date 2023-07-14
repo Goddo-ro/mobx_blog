@@ -1,7 +1,7 @@
 import Login from "../pages/Login";
 import Posts from "../pages/Posts";
 import NewPost from "../pages/NewPost";
-import Post from "../pages/Post";
+import Post from "../pages/Post/Post";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import { Navigate } from "react-router-dom";
 

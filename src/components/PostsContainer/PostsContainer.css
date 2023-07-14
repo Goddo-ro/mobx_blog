@@ -10,8 +10,8 @@
     padding: .5rem;
 }
 
-.posts-item:hover,
-.posts-item:focus {
+.posts .posts-item:hover,
+.posts .posts-item:focus {
     background-color: var(--color-links-text);
     transition: .5s;
 }
@@ -36,7 +36,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .posts-item {
+    .posts .posts-item {
         padding: 1rem;
     }
 }

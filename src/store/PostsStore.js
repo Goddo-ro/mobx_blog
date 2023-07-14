@@ -26,7 +26,7 @@ class PostsStore {
     }
 
     getPost(id) {
-        return this.posts.find(post => post.id === id);
+        return this.posts.find(post => post.id == id);
     }
 }
 
