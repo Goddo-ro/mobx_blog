@@ -1,7 +1,7 @@
 .single-form {
     margin-inline: auto;
     width: 100%;
-    max-width: 500px;
+    max-width: var(--form-max-width);
     background-color: var(--color-main-text);
     color: var(--color-main-background);
     padding: 1rem;

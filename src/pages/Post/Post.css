@@ -1,5 +1,7 @@
 .post-container {
     width: 100%;
+    max-width: var(--form-max-width);
+    margin-inline: auto;
 }
 
 #post .posts-item p {
