@@ -1,0 +1,17 @@
+.post-form input,
+.post-form textarea {
+    font-size: 1rem;
+}
+
+.post-form label {
+    width: 100%;
+}
+
+.post-form label span {
+    margin-left: .25rem;
+}
+
+.post-form textarea {
+    min-height: 200px;
+    resize: vertical;
+}

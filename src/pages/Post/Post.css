@@ -1,3 +1,7 @@
+.post-container {
+    width: 100%;
+}
+
 #post .posts-item p {
     display: block;
 }

@@ -4,6 +4,7 @@ import PostsStore from "../../store/PostsStore";
 import {observer} from "mobx-react-lite";
 import "./Post.css";
 import PostView from "../../components/PostView/PostView";
+import PostRedact from "../../components/PostRedact/PostRedact";
 
 const Post = observer(() => {
     const [post, setPost] = useState({});
@@ -22,14 +23,14 @@ const Post = observer(() => {
     }
 
     return (
-        <div>
+        <div className="post-container">
             {
                 view
                 ? <PostView post={post}/>
-                    : <>Redact</>
+                : <PostRedact post={post} setView={setView}/>
             }
             <div className="post-footer">
-                <button>
+                <button onClick={() => setView(old => !old)}>
                     {
                         view ? "Redact" : "View"
                     }
