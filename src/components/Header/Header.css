@@ -8,13 +8,6 @@ header {
     height: var(--header-height);
 }
 
-header > div {
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
 header a {
     color: var(--color-links-text);
     cursor: pointer;
@@ -25,12 +18,6 @@ header a {
 header a:hover,
 header a:focus {
     border-bottom: 1px solid var(--color-links-text);
-}
-
-header a.exit-btn:hover,
-header a.exit-btn:focus {
-    color: var(--color-red);
-    border-color: var(--color-red);
 }
 
 header > .pages {
@@ -49,4 +36,78 @@ header > .pages a:hover,
 header > .pages a:focus {
     background-color: var(--color-links-text);
     color: var(--color-main-text)
+}
+
+header a.exit-btn:hover,
+header a.exit-btn:focus {
+    color: var(--color-red);
+    border-color: var(--color-red);
+}
+
+header nav {
+    font-size: 1.5rem;
+}
+
+header .nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 36px;
+    color: var(--color-main-background);
+    display: none;
+    font-size: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+header .nav-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+    header .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4rem;
+        background: var(--color-main-text);
+        transition: 1s;
+        transform: translateY(-100vh);
+    }
+
+    header .responsive-nav {
+        transform: none;
+    }
+
+    nav .nav-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    header > .pages > *:not(:last-child) {
+        border: none;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header h1 span {
+        display: none;
+    }
+
 }

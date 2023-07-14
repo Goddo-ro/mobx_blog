@@ -1,29 +1,40 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import "./Header.css";
 import AccessControl from "../../store/AccessControl";
 import {Link} from "react-router-dom";
 import {observer} from "mobx-react-lite";
+import {FaBars, FaTimes} from "react-icons/fa";
 
 const Header = observer(() => {
+    const navRef = useRef();
+
+    const showNavbar = () => {
+        navRef.current.classList.toggle("responsive-nav");
+    }
+
     return (
         <header>
-            <h1>React + MobX Blog App</h1>
-            {
-                AccessControl.isAuthenticated
-                ? <>
-                    <div className="pages">
-                        <Link to="posts/add">New Post</Link>
-                        <Link to="posts">Posts</Link>
-                    </div>
-                    <div>
-                        <p>{AccessControl.username}</p>
-                        <a className="exit-btn" onClick={() => AccessControl.exit()}>Exit</a>
-                    </div>
-                  </>
-                : <div>
-                    <Link to="/login">Login</Link>
-                  </div>
-            }
+            <h1><span>React + MobX </span>Blog App</h1>
+            <nav className="pages" ref={navRef}>
+                {
+                    AccessControl.isAuthenticated
+                    ?
+                        <>
+                            <Link to="posts/add">New Post</Link>
+                            <Link to="posts">Posts</Link>
+                            <a className="exit-btn" onClick={() => AccessControl.exit()}>Exit</a>
+                        </>
+                    : <>
+                        <Link to="/login">Login</Link>
+                      </>
+                }
+                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+                    <FaTimes/>
+                </button>
+            </nav>
+            <button className="nav-btn" onClick={showNavbar}>
+                <FaBars/>
+            </button>
         </header>
     );
 });
