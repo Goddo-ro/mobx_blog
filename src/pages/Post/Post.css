@@ -1,3 +1,17 @@
 #post .posts-item p {
     display: block;
 }
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.post-footer button {
+    width: 30%;
+}
+
+.delete-btn {
+    color: var(--color-red);
+}

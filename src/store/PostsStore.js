@@ -16,11 +16,12 @@ class PostsStore {
     }
 
     deletePost(id) {
-        this.posts = this.posts.filter(post => post.id !== id);
+        this.posts = this.posts.filter(post => post.id != id);
+        console.log(id, this.posts);
     }
 
     updatePost(id, title, content) {
-        const post = this.posts.find(post => post.id === id);
+        const post = this.posts.find(post => post.id == id);
         post.title = title;
         post.content = content;
     }

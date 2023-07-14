@@ -5,7 +5,6 @@ import "./PostsContainer.css";
 import {Link} from "react-router-dom";
 
 const PostsContainer = observer(() => {
-    console.log(PostsStore.posts[0])
     return (
         <div className="posts">
             {
