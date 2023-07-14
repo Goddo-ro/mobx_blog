@@ -1,11 +1,20 @@
 header {
     background-color: var(--color-main-text);
     color: var(--color-main-background);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div {
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: var(--header-height);
+    height: fit-content;
+    width: 100%;
+    max-width: var(--content-max-width);
 }
 
 header a {
@@ -20,20 +29,20 @@ header a:focus {
     border-bottom: 1px solid var(--color-links-text);
 }
 
-header > .pages {
+header .pages {
     gap: 0;
 }
 
-header > .pages > *:not(:last-child) {
+header .pages > *:not(:last-child) {
     border-right: 1px solid var(--color-links-text);
 }
 
-header > .pages a {
+header .pages a {
     padding-inline: 1rem;
 }
 
-header > .pages a:hover,
-header > .pages a:focus {
+header .pages a:hover,
+header .pages a:focus {
     background-color: var(--color-links-text);
     color: var(--color-main-text)
 }
@@ -99,7 +108,7 @@ header .nav-btn:hover {
         right: 1rem;
     }
 
-    header > .pages > *:not(:last-child) {
+    header .pages > *:not(:last-child) {
         border: none;
         margin-bottom: 1rem;
     }
