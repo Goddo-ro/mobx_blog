@@ -29,6 +29,16 @@ class PostsStore {
     getPost(id) {
         return this.posts.find(post => post.id == id);
     }
+
+    saveToStorage() {
+        localStorage.setItem("posts", JSON.stringify(this.posts));
+    }
+
+    loadFromStorage() {
+        const savedPosts = localStorage.getItem("posts");
+        if (savedPosts)
+            this.posts = JSON.parse(localStorage.getItem("posts"));
+    }
 }
 
 export default new PostsStore();

@@ -3,11 +3,20 @@ import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./components/AppRouter";
 import Header from "./components/Header/Header";
 import AccessControl from "./store/AccessControl";
+import {observer} from "mobx-react-lite";
+import PostsStore from "./store/PostsStore";
 
-function App() {
+const  App = observer(() => {
     useEffect(() => {
         AccessControl.checkStorage();
+        PostsStore.loadFromStorage();
     }, []);
+
+    window.addEventListener("beforeunload", (ev) =>
+    {
+        ev.preventDefault();
+        PostsStore.saveToStorage();
+    });
 
   return (
     <div className="App">
@@ -19,6 +28,6 @@ function App() {
         </BrowserRouter>
     </div>
   );
-}
+});
 
 export default App;
