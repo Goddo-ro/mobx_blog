@@ -1,14 +1,17 @@
 import React, {useState} from 'react';
 import PostForm from "../PostForm/PostForm";
+import {observer} from "mobx-react-lite";
+import PostsStore from "../../store/PostsStore";
 
-const PostRedact = ({post, setView}) => {
+const PostRedact = observer(({post, setView}) => {
     const [title, setTitle] = useState(post.title);
     const [content, setContent] = useState(post.content);
 
     const update = (e) => {
         e.preventDefault();
 
-        console.log(title, content)
+        PostsStore.updatePost(post.id, title, content);
+        setView(true);
     }
 
     return (
@@ -16,6 +19,6 @@ const PostRedact = ({post, setView}) => {
                   content={content} setContent={setContent}
         />
     );
-};
+});
 
 export default PostRedact;
