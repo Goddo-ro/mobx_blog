@@ -32,3 +32,21 @@ header a.exit-btn:focus {
     color: var(--color-red);
     border-color: var(--color-red);
 }
+
+header > .pages {
+    gap: 0;
+}
+
+header > .pages > *:not(:last-child) {
+    border-right: 1px solid var(--color-links-text);
+}
+
+header > .pages a {
+    padding-inline: 1rem;
+}
+
+header > .pages a:hover,
+header > .pages a:focus {
+    background-color: var(--color-links-text);
+    color: var(--color-main-text)
+}

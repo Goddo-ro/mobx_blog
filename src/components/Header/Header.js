@@ -10,10 +10,16 @@ const Header = observer(() => {
             <h1>React + MobX Blog App</h1>
             {
                 AccessControl.isAuthenticated
-                ? <div>
-                    <p>{AccessControl.username}</p>
-                    <a className="exit-btn" onClick={() => AccessControl.exit()}>Exit</a>
-                  </div>
+                ? <>
+                    <div className="pages">
+                        <Link to="posts/add">New Post</Link>
+                        <Link to="posts">Posts</Link>
+                    </div>
+                    <div>
+                        <p>{AccessControl.username}</p>
+                        <a className="exit-btn" onClick={() => AccessControl.exit()}>Exit</a>
+                    </div>
+                  </>
                 : <div>
                     <Link to="/login">Login</Link>
                   </div>
