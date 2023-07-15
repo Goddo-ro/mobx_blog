@@ -92,6 +92,7 @@ header .nav-btn:hover {
         align-items: center;
         flex-direction: column;
         justify-content: center;
+        z-index: 3;
         gap: 4rem;
         background: var(--color-main-text);
         transition: 1s;

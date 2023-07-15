@@ -12,11 +12,16 @@ const Header = observer(() => {
         navRef.current.classList.toggle("responsive-nav");
     }
 
+    const closeNavbar = (e) => {
+        if (e.target.localName === "a")
+            navRef.current.classList.toggle("responsive-nav");
+    }
+
     return (
         <header>
             <div>
                 <h1><span>React + MobX </span>Blog App</h1>
-                <nav className="pages" ref={navRef}>
+                <nav className="pages" ref={navRef} onClick={closeNavbar}>
                     {
                         AccessControl.isAuthenticated
                             ?
